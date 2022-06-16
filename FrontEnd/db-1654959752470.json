@@ -1,0 +1,25 @@
+{
+  "flores": [
+    {
+      "id": 1,
+      "imagem": "https://www.shopgarden.com.br/public/produtos/47/47-tulipa_g.jpg",
+      "nome": "Tulipa",
+      "descricao": "É a espécie de flor mais difundida na Holanda.",
+      "preco": 15.5
+    },
+    {
+      "id": 2,
+      "imagem": "https://www.floresefolhagens.com.br/wp-content/uploads/2017/01/rosa-arbustiva-1-1.jpg",
+      "nome": "Rosa",
+      "descricao": "Flor de espinhos.",
+      "preco": 20.5
+    },
+    {
+      "id": 3,
+      "imagem": "https://casa.abril.com.br/wp-content/uploads/2022/02/1-ora-pro-nobis-o-que-e%CC%81-e-quais-os-benefi%CC%81cios-para-a-sau%CC%81de-e-para-o-lar.jpeg?resize=630,443",
+      "nome": "Ora pro nobis",
+      "descricao": "Remedio.",
+      "preco": 5.5
+    }
+  ]
+}

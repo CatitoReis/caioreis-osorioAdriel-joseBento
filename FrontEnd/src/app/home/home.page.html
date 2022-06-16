@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Viveiro  <mat-icon class="mat-18">local_florist</mat-icon>
+    </ion-title>
+    <button  (click)="alteradorLogin(true)" *ngIf="!login">Login</button>
+    <button  (click)="deslogar()" *ngIf="login">sair</button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Vivieiro <mat-icon class="mat-18">local_florist</mat-icon></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="container">
+    <mat-card class="adr catalogo catalogoGeral"  *ngIf="!alteradorlogin" routerLink="/catalogo">
+      <mat-card-content>
+        <h1 > Catalogo <br> <mat-icon style="color: rgb(0, 0, 0)">menu</mat-icon></h1>
+      </mat-card-content>
+    </mat-card>
+
+
+
+    <div *ngIf="login">
+<div class="card">
+    <mat-card class="adr catalogo butonDiv"  *ngIf="!alteradorlogin"  routerLink="/gereciamento-catalogo-flores">
+      <mat-card-content>
+        <h1><mat-icon style="color: red">hdr_strong</mat-icon>Flores</h1>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="adr catalogo butonDiv"  *ngIf="!alteradorlogin" routerLink="/gerenciamento-catalogo-sementes">
+      <mat-card-content>
+        <h1 ><mat-icon style="color: green">hdr_weak</mat-icon>Sementes</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="card">
+    <mat-card class="adr catalogo butonDiv"  *ngIf="!alteradorlogin" routerLink="/gerenciamento-catalogo-arbustos">
+      <mat-card-content>
+        <h1 ><mat-icon style="color: blue">hdr_strong</mat-icon>Arbustos</h1>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="adr catalogo butonDiv"  *ngIf="!alteradorlogin" routerLink="/gerenciamento-catalogo-arvores">
+      <mat-card-content>
+        <h1 ><mat-icon>hdr_weak</mat-icon>Arvores</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="card">
+    <mat-card class="adr catalogo butonDiv"  *ngIf="!alteradorlogin" routerLink="/gerenciamento-catalogo-plantas-medicinais">
+      <mat-card-content>
+        <h1 ><mat-icon style="color: purple">hdr_strong</mat-icon>Plantas Medicinais</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+  
+
+
+
+
+    <mat-card class="example-card" *ngIf="!alteradorlogin">
+      <mat-card-content>
+          <p>By jacare</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card-content *ngIf="alteradorlogin" class="example-form">
+      <h1>Realize seu login</h1>
+      <button mat-icon-button (click)="alteradorLogin(false)">
+        <mat-icon>reply</mat-icon>
+      </button>
+      <mat-form-field class="login" appearance="fill">
+        <mat-label class="active">Usuario</mat-label>
+        <input matInput [(ngModel)]="usuario.nome" type="text" placeholder="Ex. admin">
+      </mat-form-field>
+      <mat-form-field class="login" appearance="fill">
+        <mat-label class="active">Senha</mat-label>
+        <input matInput [(ngModel)]="usuario.senha" type="password" placeholder="Ex. 1234">
+      </mat-form-field>
+      <button (click)="[fazerLogin(), alteradorLogin(false)]" mat-raised-button color="warn">Entrar</button>
+    </mat-card-content>
+
+  </div>
+</ion-content>
+
+

@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>gereciamentoCatalogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <button mat-icon-button color="primary"  class="demo-button">
+    <mat-icon routerLink="/home">arrow_back</mat-icon>
+  </button>
+  <button mat-raised-button color="primary"  (click)="[dialogControl(true),adicionarAtualizarControl(true)]" class="demo-button">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+  <table *ngIf="!dialog" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <!-- Coluna de id -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>N°</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="imagem">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"><img src="{{element.link}}"></td>
+    </ng-container>
+
+    <!-- Coluna de nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>NOME</th>
+      <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+
+    </ng-container>
+
+
+    <!-- Coluna de preço -->
+    <ng-container matColumnDef="preco">
+      <th mat-header-cell *matHeaderCellDef>PREÇO</th>
+      <td mat-cell *matCellDef="let element">{{element.preco | currency : 'R$'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef>EDITAR</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary"  (click)="[dialogControl(true, element), adicionarAtualizarControl(false)] " class="demo-button">
+        <mat-icon>create</mat-icon>
+      </button>
+    </td>
+    </ng-container>
+
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell *matHeaderCellDef>EXCLUIR</th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="excluirSemente(element.id)" mat-icon-button color="warn"  class="demo-button">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+
+  <div *ngIf="dialog" class="mat-elevation-z8 demo-table">
+
+    <form id="msform" [formGroup]="form">
+      <div class="p-field">
+        <br>
+        <h2 class="fs-title">SEMENTE</h2>
+        <h3 class="fs-subtitle">Informações</h3>
+        NOME <i class="pi pi-user"></i><br>
+        <input pInputText type="text" formControlName="nome" value="form.nome" /><br>
+
+        LINK DA IMAGEM <i class="pi pi-user"></i><br>
+        <input pInputText type="text" formControlName="link" value="form.link" /><br>
+
+        DESCRIÇÃO <i class="pi pi-user"></i><br>
+        <input pInputText type="text" formControlName="descricao" value="form.descricao" /><br>
+
+        PREÇO <i class="pi pi-user"></i><br>
+        <input pInputText type="text" formControlName="preco" value="form.preco" /><br>
+    </div>
+
+
+    </form>
+
+
+
+      <div>
+
+
+          <button mat-icon-button color="accent" (click)="dialogControl(false)">
+            <mat-icon>clear</mat-icon>
+          </button>
+
+
+        <button *ngIf="!adicionarAtualizar" mat-icon-button color="primary" (click)="editarSemente()">SALVAR</button>
+        <button *ngIf="adicionarAtualizar" mat-icon-button color="primary" (click)="adicionarSemente()">SALVAR</button>
+      </div>
+  </div>
+</ion-content>

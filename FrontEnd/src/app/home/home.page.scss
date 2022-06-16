@@ -1,0 +1,106 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+;adr{
+  
+}
+.adr:hover{
+  color: #fff;
+  background-color: rgb(42, 14, 119);
+}
+
+.container{
+  margin-top: 1%;
+}
+
+.catalogo{
+  margin-top: 20%;
+  background-color: rgb(74, 136, 218);
+
+  h1{
+    color: white;
+    
+  }
+  h1:hover{
+    color: black;
+
+  }
+  //background-image: url(https://p0.piqsels.com/preview/1001/574/539/flowers-painted-fake-flowers.jpg);
+}
+.catalogo:hover{
+ background-image: url(https://www.10wallpaper.com/wallpaper/1366x768/1408/fresh_green_leaves_of_plants_Wallpaper_15_1366x768.jpg);
+
+}
+
+.catalogoGeral{
+  margin-top: 20%;
+  h1{
+    color: white;
+    
+  }
+  h1:hover{
+    color: black;
+
+  }
+  background-image: url(https://p0.piqsels.com/preview/1001/574/539/flowers-painted-fake-flowers.jpg);
+}
+.catalogoGeral:hover{
+  background-image: url(https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg?s=1500x700&q=85);
+
+  
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.login {
+  align-items: center;
+
+  width: 100%;
+}
+
+.butonDiv{
+  padding: 16px, 16px, 16px, 16px;
+  width: fit-content;
+  width: 125px;
+  height: 80px;
+  margin-left: 8%;
+
+}
+
+.card{
+  display: flex;
+  margin-top: -41px;
+  
+}
+
+
+
